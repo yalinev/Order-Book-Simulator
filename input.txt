@@ -1,0 +1,9 @@
+Add/Cancel, id, B/S, Price, Quantity 
+
+A,1,B,100.00,10
+A,2,S,100.10,5
+A,3,S,99.90,4
+C,2
+A,4,B,100.20,6
+
+
