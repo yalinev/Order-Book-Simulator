@@ -1,0 +1,42 @@
+Order: 
+id, buy/sell, price, quantity 
+
+Event: Add, Cancel
+A - id, buy/sell, price, quantity
+C - id 
+
+OrderBook:
+void apply(Event)
+void add(Order)
+void cancel(Order)
+match
+
+1. Read input.txt 
+2. Add and Cancel 
+3. Match trades when bestBid >= bestAsk 
+4. Display 
+
+Structure: 
+structs: order, event, trade 
+class: Parser, OrderBook 
+
+
+Order Book Simulator
+A simple simulation of a trading system that deals with limit orders
+1. Add limit order (buy/sell, price, quantity)
+2. Delete order 
+3. Match trades whenever best bid >= best ask 
+4. Maintain best bid/ask and print trades + top of book 
+
+*Define input format: 
+- ADD: A, id, (buy/sell), price, quantity
+- DELETE: D, id 
+- Print trades as they happen 
+
+- Trade at the resting order price: 
+When new order is added, treat like an incoming order and match
+with the opposite side
+
+Resources Used: 
+https://www.investopedia.com/terms/b/bid-and-ask.asp 
+https://hexn.io/blog/a-traders-guide-to-order-books-sa0v3fcmvbsnkc645d29upnq 
