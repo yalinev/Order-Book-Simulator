@@ -59,15 +59,52 @@ void OrderBook::deleteOrder(int orderID){
                 }
             }
 
+        }
     }
+} 
+
+// match while bestBid >= bestAsk
+// bids: descending, highest price first 
+// asks: ascending, lowest price first
+void OrderBook::matchOrders(){
+    // loop while bid and ask not empty and best bid >= best ask
+    while(!bids.empty() && !asks.empty()){
+
+         // get best level of queue
+         auto bidIt = bids.begin();
+         auto askIt = asks.begin();
+
+        // best bid and ask prices first 
+         int bestBid = bidIt->first;
+         int bestAsk = askIt->first;
+
+         // check if there are still possible matches
+         if(bestBid < bestAsk){
+            break; 
+         }
+
+         // get queue at best prices 
+         auto &bidOrders = bidIt->second;
+         auto &askOrders = askIt->second;
+
+         // get from the front of the queue 
+         Order &buyOrder = bidOrders.front();
+         Order &sellOrder = askOrders.front();
+
+        // get trade quantity = min(bid quantity, ask quantity)
+         int tradeNum = min(buyOrder.quantity, sellOrder.quantity); 
+
+        // resting order price 
+
+        // apply trade, update quantities, and remove if fully filled
+            // remove from bids and ask accordingly
+
+
+    }
+    
 }
 
 
-
-// natch while bestBid >= bestAsk
-void matchOrders(){
-
-}
 
 
 
