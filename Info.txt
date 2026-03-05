@@ -1,0 +1,18 @@
+Structs: order, event, trade 
+Class: Parser, OrderBook 
+
+Order Book Simulator
+A simple simulation of a trading system that deals with limit orders
+1. Add order (buy/sell, price, quantity)
+2. Delete order 
+3. Match trades whenever best bid >= best ask 
+4. Maintain best bid/ask and print trades + top of book 
+
+Input format: 
+Add/Cancel, id, B/S, Price, Quantity 
+(ActionType, id, Side, Price, Quantity)
+
+
+Resources Used: 
+https://www.investopedia.com/terms/b/bid-and-ask.asp 
+https://hexn.io/blog/a-traders-guide-to-order-books-sa0v3fcmvbsnkc645d29upnq 
